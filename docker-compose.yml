@@ -10,18 +10,18 @@ services:
       - '5000:5000'
     environment:
       - NODE_ENV=development
-  db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-  web:
-    build: ./rails-app
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/rails-app/myapp
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
+#  db:
+#    image: postgres
+#    volumes:
+#      - ./tmp/db:/var/lib/postgresql/data
+#  web:
+#    build: ./rails-app
+#    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+#    volumes:
+#      - .:/rails-app/myapp
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - db
 volumes:
   node-modules:
